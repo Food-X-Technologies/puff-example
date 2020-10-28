@@ -1,7 +1,21 @@
-# puff-example
+# Puff Example
 Convert yaml into Azure ARM parameters templates (json).
 - On GitHub: [puff](https://github.com/Food-X-Technologies/puff).
 - On NPM: [puff](https://www.npmjs.com/package/@foodx/puff).
+
+## Get Started
+### Clone
+```
+git clone git@github.com:Food-X-Technologies/puff-example.git
+```
+### NPM Install
+```
+npm i
+```
+### NPM Run Puff
+```
+npm run puff
+```
 
 # Examples
 ## [Input (yaml)](https://github.com/Food-X-Technologies/puff-example/blob/main/example-simple/example.yml)
