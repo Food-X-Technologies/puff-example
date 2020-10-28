@@ -35,9 +35,8 @@ environments:
     region: xyz
 services:
   service1:
-    regions:
-    - abc:
-      key2: value2xyz
+    region: abc
+    key2: value2xyz
 ```
 
 ## Outputs (json)
@@ -53,19 +52,11 @@ services:
   "key2": {
    "value": "value2default"
   },
-  "regions": {
-   "value": [
-    {
-     "abc": null,
-     "key2": "value2xyz"
-    }
-   ]
+  "region": {
+   "value": "abc"
   },
   "key3": {
    "value": "value2one"
-  },
-  "region": {
-   "value": "abc"
   }
  }
 }
@@ -82,19 +73,11 @@ services:
   "key2": {
    "value": "value2default"
   },
-  "regions": {
-   "value": [
-    {
-     "abc": null,
-     "key2": "value2xyz"
-    }
-   ]
+  "region": {
+   "value": "xyz"
   },
   "key4": {
    "value": "value4two"
-  },
-  "region": {
-   "value": "xyz"
   }
  }
 }

@@ -13,6 +13,5 @@ environments:
     region: xyz
 services:
   service1:
-    regions:
-    - abc:
-      key2: value2xyz
+    region: abc
+    key2: value2xyz

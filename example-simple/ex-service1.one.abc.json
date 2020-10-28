@@ -8,19 +8,11 @@
   "key2": {
    "value": "value2default"
   },
-  "regions": {
-   "value": [
-    {
-     "abc": null,
-     "key2": "value2xyz"
-    }
-   ]
+  "region": {
+   "value": "abc"
   },
   "key3": {
    "value": "value2one"
-  },
-  "region": {
-   "value": "abc"
   }
  }
 }
