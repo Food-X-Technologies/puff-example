@@ -3,24 +3,24 @@
  "contentVersion": "1.0.0.0",
  "parameters": {
   "key1": {
-   "value": {
-    "value": "value1abc"
-   }
+   "value": "value1abc"
   },
   "key2": {
-   "value": {
-    "value": "value2default"
-   }
+   "value": "value2default"
+  },
+  "regions": {
+   "value": [
+    {
+     "abc": null,
+     "key2": "value2xyz"
+    }
+   ]
   },
   "key3": {
-   "value": {
-    "value": "value2one"
-   }
+   "value": "value2one"
   },
   "region": {
-   "value": {
-    "value": "abc"
-   }
+   "value": "abc"
   }
  }
 }

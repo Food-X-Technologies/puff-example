@@ -1,12 +1,11 @@
 {
-    "name": "puff-example",
-    "version": "0.0.1",
-    "scripts": {
-      "puff": "puff",
-      "puffin": "puff -d"
-    },
-    "dependencies": {
-      "@foodx/puff": "^2.1.0"
-    }
+  "name": "puff-example",
+  "version": "0.0.1",
+  "scripts": {
+    "puff": "puff",
+    "puffin": "puff -d"
+  },
+  "dependencies": {
+    "@foodx/puff": "^2.1.10"
   }
-  
+}
