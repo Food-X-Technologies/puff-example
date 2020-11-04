@@ -1,0 +1,11 @@
+name: storage-
+environments:
+  dev:
+    name: mytesting223
+    region: westus2
+  prod:
+    regions:
+    - westus2
+      name: prodwest223
+    - eastus2
+      name: prodeast223

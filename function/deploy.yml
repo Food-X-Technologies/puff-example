@@ -1,0 +1,8 @@
+name: function-
+environments:
+  dev:
+    region: westus2
+  prod:
+    regions:
+    - westus2
+    - eastus2
