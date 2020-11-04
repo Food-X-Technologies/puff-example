@@ -7,6 +7,21 @@ Let us all agree infrastructure is only there to serve the purpose; so anything 
 
 Also note worthy, is that we use [Jest](https://www.npmjs.com/package/jest) to unit test our parameters files, so that we can ensure changes are noted by people developing new services. Using JavaScript to test json, makes a lot of sense; and is the reason why puff ended up being a Node.js runtime.
 
+# Basics
+We have a couple main things that contain our services across environments:
+
+## Name
+The name is the prefix used in the file generation, it does not end up inside the template.
+
+## Default
+Values that are set in all templates through all environments and services, this is defined at the top of the template along with the name.
+
+## Environments
+Our general approach is to have an environment map to an [Azure Subscription](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). We use subscriptions to ensure that we maintain appropriate security controls. Given that, we deploy into Dev/Test/Staging/Production Secondary/Production Primary in that sequence; to enure validity of every change we make.
+
+## Regions
+Region is important for us, as we deploy multiple regions per environment for active/active services; things like functions, we want to have workers running off of the service bus; across paired regions. Region can be specified as region (singular); or regions with a list (as multiple).
+
 # Example
 Convert yaml into Azure ARM parameters templates (json).
 - On GitHub: [puff](https://github.com/Food-X-Technologies/puff).
