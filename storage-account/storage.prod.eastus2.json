@@ -3,10 +3,10 @@
  "contentVersion": "1.0.0.0",
  "parameters": {
   "sku": {
-   "value": "Standard_LRS"
+   "value": "Premium_LRS"
   },
   "name": {
-   "value": "myproduction223"
+   "value": "prodeast223"
   },
   "region": {
    "value": "eastus2"

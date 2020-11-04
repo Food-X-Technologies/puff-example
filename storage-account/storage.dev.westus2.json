@@ -5,6 +5,9 @@
   "sku": {
    "value": "Standard_LRS"
   },
+  "name": {
+   "value": "mydeving223"
+  },
   "region": {
    "value": "westus2"
   }
