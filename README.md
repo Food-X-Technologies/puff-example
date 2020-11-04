@@ -14,13 +14,13 @@ We have a couple main things that contain our services across environments:
 The name is the prefix used in the file generation, it does not end up inside the template.
 
 ## Default
-Values that are set in all templates through all environments and services, this is defined at the top of the template along with the name. The can be overwritten in further definitions of the service or environment.
+Values that are set in all templates through all environments and services, this is defined at the top of the template along with the name. The can be over-loaded in further definitions of the service or environment.
 
 ## Environments
-Our general approach is to have an environment map to an [Azure Subscription](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). We use subscriptions to ensure that we maintain appropriate security controls. Given that, we deploy into Dev/Test/Staging/Production Secondary/Production Primary in that sequence; to enure validity of every change we make.
+Our approach is to have an environment map to an [Azure Subscription](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription). We use subscriptions to ensure that we maintain appropriate security controls. Given that, we deploy into Dev/Test/Staging/Production Secondary/Production Primary in that sequence; to enure validity of every change we make, for infrastructure and applications.
 
 ## Regions
-Region is important for us, as we deploy multiple regions per environment for active/active services; things like functions, we want to have workers running off of the service bus; across paired regions. Region can be specified as region (singular); or regions with a list (as multiple).
+Region is important for us, as we deploy multiple regions per environment for active/active services; things like functions, we want to have workers running off of the [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus/); across paired regions. Region can be specified as region (singular); or regions with a list (as multiple).
 
 # Example
 Convert yaml into Azure ARM parameters templates (json).
