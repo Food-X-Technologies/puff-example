@@ -39,9 +39,8 @@ npm run puffin
 ## [Input (yaml)](https://github.com/Food-X-Technologies/puff-example/blob/main/example-simple/example.yml)
 ```
 name: ex-
-default:
-    key1: value1default
-    key2: value2default
+key1: value1default
+key2: value2default
 environments:
   one:
     key3: value2one
