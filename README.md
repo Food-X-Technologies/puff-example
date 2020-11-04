@@ -22,7 +22,7 @@ Our approach is to have an environment map to an [Azure Subscription](https://do
 ## Regions
 Region is important for us, as we deploy multiple regions per environment for active/active services; things like functions, we want to have workers running off of the [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus/); across paired regions. Region can be specified as region (singular); or regions with a list (as multiple).
 
-# Example
+# Get Started
 Convert yaml into Azure ARM parameters templates (json).
 - On GitHub: [puff](https://github.com/Food-X-Technologies/puff).
 - On NPM: [puff](https://www.npmjs.com/package/@foodx/puff).
