@@ -1,4 +1,4 @@
-name: function
+name: func-
 environments:
   dev:
     region: westus2
@@ -6,3 +6,13 @@ environments:
     regions:
     - westus2:
     - eastus2:
+services:
+  pythonic:
+    version: 2
+    runtime: python
+  script:
+    version: 3
+    runtime: node
+  msfriends:
+    version: 1
+    runtime: dotnet

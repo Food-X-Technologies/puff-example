@@ -9,9 +9,26 @@
                 "description": "The name of you Web Site."
             }
         },
-        "storageAccountName": {
+        "version": {
+            "type": "int",
+            "defaultValue": 3,
+            "minValue": 1,
+            "maxValue": 3,
+            "metadata": {
+                "description": "Function app runtime version."
+            }
+        },
+        "runtime": {
             "type": "string",
-            "defaultValue": "[concat('store', uniqueString(resourceGroup().id))]"
+            "defaultValue": "dotnet",
+            "allowedValues": [
+                "dotnet",
+                "node",
+                "python"
+            ],
+            "metadata": {
+                "description": "Function app runtime."
+            }
         },
         "region": {
             "type": "string",
@@ -23,19 +40,21 @@
     },
     "variables": {
         "hostingPlanName": "[concat('hpn-', resourceGroup().name)]",
-        "storageAccountid": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]",
-        "location": "[parameters('region')]"
+        "storageAccountName": "[concat('store', uniqueString(resourceGroup().id))]",
+        "storageAccountid": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+        "location": "[parameters('region')]",
+        "version": "[concat('~', parameters('version'))]"
     },
     "resources": [
         {
             "type": "Microsoft.Web/sites",
-            "apiVersion": "2019-08-01",
+            "apiVersion": "2020-06-01",
             "name": "[parameters('siteName')]",
             "kind": "functionapp,linux",
             "location": "[variables('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
             ],
             "properties": {
                 "name": "[parameters('siteName')]",
@@ -43,15 +62,15 @@
                     "appSettings": [
                         {
                             "name": "FUNCTIONS_WORKER_RUNTIME",
-                            "value": "python"
+                            "value": "[parameters('runtime')]"
                         },
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
-                            "value": "~2"
+                            "value": "[variables('version')]"
                         },
                         {
                             "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', parameters('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
                         }
                     ]
                 },
@@ -61,9 +80,9 @@
         },
         {
             "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2019-08-01",
+            "apiVersion": "2020-06-01",
             "name": "[variables('hostingPlanName')]",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "kind": "linux",
             "properties": {
                 "reserved": true
@@ -75,9 +94,9 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "name": "[parameters('storageAccountName')]",
+            "name": "[variables('storageAccountName')]",
             "apiVersion": "2019-06-01",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "kind": "StorageV2",
             "sku": {
                 "name": "Standard_LRS"
