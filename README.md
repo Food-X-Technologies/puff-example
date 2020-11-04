@@ -1,7 +1,9 @@
 # Puff
-At FoodX we have been releasing a lot of sofware, and this requires the infrastructure of our services to be maintained across many (12 and counting) environments. We use Azure DevOps as our CI/CD; and have found that (espeicially) in infrastructure deployments it is best to not leverage variables in release pipelines, and push them into git. That way we can view a single source of truth, without contamination from a secondary source.
-Puff enables this, by making management of the parameters per environment land in a single yaml file. Secondly,  (by design) you can review a change that could affect all environments, or changes that affect a select number of environments in a single file. This takes cognative load off of development efforts.
-Lets all aggree infrastructure is only there to serve the purpose; so anything we can do to reduce the problem is valued.
+At FoodX we have been releasing a lot of sofware, and this requires the infrastructure of our services to be maintained across many (12+) environments. We use [Azure DevOps](https://dev.azure.com) as our CI/CD; and have found that (espeicially) in infrastructure deployments it is best to not leverage variables in release pipelines; so we push them into git. That way we can view a single source of truth, without contamination from a secondary source.
+
+Puff enables this, by making management of the parameters per environment land in a single yaml file. Secondly, (by design) you can review a change that could affect all environments, or changes that affect a select number of environments in a single file. Which takes cognative load off of pull requests, that could have a disasterous effect (yes, I have 'deleted' a cosmos database in production).
+
+Let us all aggree infrastructure is only there to serve the purpose; so anything we can do to reduce the problem is valued. Making it easy, and with less error helps improve availability; and those guilty oh-sshhhh moments.
 
 # Example
 Convert yaml into Azure ARM parameters templates (json).
