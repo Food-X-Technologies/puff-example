@@ -5,6 +5,8 @@ Puff enables this, by making management of the parameters per environment land i
 
 Let us all aggree infrastructure is only there to serve the purpose; so anything we can do to reduce the problem is valued. Making it easy, and with less error helps improve availability; and those guilty oh-sshhhh moments.
 
+Also note worthy, is that we use [Jest](https://www.npmjs.com/package/jest) to unit test our paramaters files, so that we can ensure changes are noted by people developing new services. Using JavaScript to test json, makes a lot of sense; and is the reason why puff ended up being a Node.js runtime.
+
 # Example
 Convert yaml into Azure ARM parameters templates (json).
 - On GitHub: [puff](https://github.com/Food-X-Technologies/puff).
