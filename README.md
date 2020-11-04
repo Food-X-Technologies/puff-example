@@ -29,6 +29,9 @@ npm run puffin
 ```
 
 # Examples
+- [Azure Functions](https://github.com/Food-X-Technologies/puff-example/tree/main/function)
+- [Azure Storage Accounts](https://github.com/Food-X-Technologies/puff-example/tree/main/storage-account)
+
 ## [Input (yaml)](https://github.com/Food-X-Technologies/puff-example/blob/main/example-simple/example.yml)
 ```
 name: ex-
