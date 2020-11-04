@@ -18,8 +18,14 @@ git clone git@github.com:Food-X-Technologies/puff-example.git
 npm i
 ```
 ### NPM Run Puff
+Generate json parameters files, based on yaml file.
 ```
 npm run puff
+```
+### NPM Delete
+Delete generated files, keep your git clean!
+```
+npm run puffin
 ```
 
 # Examples
