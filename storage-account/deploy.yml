@@ -2,6 +2,7 @@ name: storage
 sku: Standard_LRS
 environments:
   dev:
+    name: mytesting223
     region: westus2
   prod:
     name: myproduction223
