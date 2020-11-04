@@ -2,13 +2,13 @@ name: storage
 sku: Standard_LRS
 environments:
   dev:
-    name: mytesting223
     region: westus2
   prod:
+    name: myproduction223
     regions:
     - westus2:
       name: prodwest223
       sku: Premium_LRS
     - eastus2:
       name: prodeast223
-      sku: Standard_ZRS
+      sku: Premium_LRS

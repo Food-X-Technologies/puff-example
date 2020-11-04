@@ -5,9 +5,6 @@
   "sku": {
    "value": "Standard_LRS"
   },
-  "name": {
-   "value": "mytesting223"
-  },
   "region": {
    "value": "westus2"
   }
